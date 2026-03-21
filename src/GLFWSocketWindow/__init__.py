@@ -2,7 +2,7 @@
 GLFW window that listens on a UNIX socket for a stream of RGBA pixels
 """.removeprefix("\n")
 
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 
 import os
 import argparse
@@ -68,8 +68,6 @@ def main() -> None:
             server.serve_forever()
         except KeyboardInterrupt:
             pass
-
-    print("Shutting down server")
 
     try:
         os.unlink(server_address)
