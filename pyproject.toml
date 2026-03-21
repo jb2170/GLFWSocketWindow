@@ -1,0 +1,24 @@
+[project]
+name = "GLFWSocketWindow"
+dynamic = ["version"]
+description = "GLFW window that listens on a UNIX socket for a stream of RGBA pixels"
+readme = "README.md"
+license = "GPL-3.0-only"
+license-files = ["LICENSE"]
+dependencies = [
+  "glfw",
+  "moderngl",
+]
+
+[project.urls]
+Homepage = "https://github.com/jb2170/GLFWSocketWindow/"
+
+[project.scripts]
+glfw-socket-window = "GLFWSocketWindow:main"
+
+[tool.setuptools.dynamic]
+version = {attr = "GLFWSocketWindow.__version__"}
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
