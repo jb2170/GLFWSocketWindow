@@ -1,10 +1,10 @@
 import moderngl as mgl
 import glfw
 
-from .mglhelpers import HasMGLContext, create_simple_framebuffer
+from .mglhelpers import create_simple_framebuffer
 from .util import ChunkedNonBlockReader
 
-class GLFWWindow(HasMGLContext):
+class GLFWWindow:
     def __init__(self, width: int, height: int, title: str = "GLFW Window"):
         # Initialize GLFW
         if not glfw.init():
@@ -30,7 +30,6 @@ class GLFWWindow(HasMGLContext):
 
         framebuffer = create_simple_framebuffer(gl, width, height)
 
-        super().__init__(gl)
         self._width = width
         self._height = height
         self._handle = window_handle
@@ -77,7 +76,7 @@ class GLFWWindow(HasMGLContext):
         glfw.terminate()
 
     def read_frame(self, chunked_reader: ChunkedNonBlockReader):
-        gl = self.gl
+        gl = mgl.get_context()
 
         # pixels = bytearray(floats_per_image)
         #
