@@ -1,16 +1,16 @@
-import moderngl
+import moderngl as mgl
 
 class HasMGLContext:
     """Has ModernGL Context"""
 
-    def __init__(self, gl: moderngl.Context):
+    def __init__(self, gl: mgl.Context):
         self._gl = gl
 
     @property
     def gl(self):
         return self._gl
 
-def create_simple_framebuffer(gl: moderngl.Context, width: int, height: int) -> moderngl.Framebuffer:
+def create_simple_framebuffer(gl: mgl.Context, width: int, height: int) -> mgl.Framebuffer:
     """One RGBA color texture, no depth buffer"""
 
     texture = gl.texture((width, height), 4)

@@ -1,4 +1,4 @@
-import moderngl
+import moderngl as mgl
 import glfw
 
 from .mglhelpers import HasMGLContext, create_simple_framebuffer
@@ -24,7 +24,7 @@ class GLFWWindow(HasMGLContext):
         glfw.make_context_current(window_handle)
 
         # Detect OpenGL context from GLFW
-        gl = moderngl.create_context()
+        gl = mgl.create_context()
 
         # We'll deal with it from here using ModernGL
 
