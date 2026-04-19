@@ -2,7 +2,7 @@
 GLFW window that listens on a UNIX socket for a stream of RGBA pixels
 """.removeprefix("\n")
 
-__version__ = "0.0.2"
+__version__ = "0.0.3"
 
 import os
 import argparse
